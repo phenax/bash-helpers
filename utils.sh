@@ -13,12 +13,14 @@ git-get-branch-name() {
 # Get remote url
 git-get-remote-url() {
   local remoteName=${1:-"origin"};
-  echo "$(
+  local url="$(
     git remote -v |
     grep $remoteName |
     head -1 |
     grep -oP "(https?://(.*))\\.git" -m 1
   )";
+
+  echo "${url/.git/}"; # Remove .git extension
 }
 
 # alias git-amend="git commit --amend";

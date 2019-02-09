@@ -6,11 +6,11 @@ test "git-open"; {
 
   # Should trigger xdg-open with given url
   git-open;
-  assertEq "https://url.com/repo.git" "$mockLastOpenedUrl";
+  assertEq "https://url.com/repo" "$mockLastOpenedUrl";
 
   # Should trigger xdg-open with upstream url
   git-open upstream;
-  assertEq "https://url.com/upstream-repo.git" "$mockLastOpenedUrl";
+  assertEq "https://url.com/upstream-repo" "$mockLastOpenedUrl";
 
   mockLastOpenedUrl="";
   # Should return exit code 1, if repo was not found
