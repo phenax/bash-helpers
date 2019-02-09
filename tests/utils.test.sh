@@ -1,11 +1,8 @@
 #!/bin/bash
 
-echo "cool";
-
 import-module "../utils.sh";
 
-
-{ # Get branch name
+test "git-get-branch-name"; {
 
   # Should return default (master)
   assertEq "master" $(git-get-branch-name);
@@ -15,8 +12,7 @@ import-module "../utils.sh";
   assertEq "foobar" $(git-get-branch-name);
 }
 
-
-{ # Get remote url
+test "git-get-remote-url"; {
 
   # Should return remote origin url
   assertEq "https://url.com/repo.git" $(git-get-remote-url);
