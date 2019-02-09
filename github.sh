@@ -2,7 +2,7 @@
 
 import-module "utils.sh";
 
-git-open() {
+git-open-repo() {
   local url=$(git-get-remote-url $1);
   if [ "$url" == "" ]; then
     echo "No remote url found for $1";
