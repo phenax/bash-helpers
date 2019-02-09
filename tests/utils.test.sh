@@ -1,6 +1,6 @@
 #!/bin/bash
 
-import-module "../utils.sh";
+import-module "utils.sh";
 
 test "git-get-branch-name"; {
 

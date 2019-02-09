@@ -5,7 +5,11 @@ set -e;
 absolute-dir() { echo $(dirname "$(realpath $1)"); }
 
 # Import module with an absolute path
-import-module() { source "$(absolute-dir $0)/$1"; }
+import-test-module() { source "$(absolute-dir $BASH_SOURCE)/$1"; }
+
+import-test-module "mocks.sh";
+import-test-module "../index.sh";
+
 
 test() {
   echo "-- $1";
@@ -19,11 +23,9 @@ assertEq() {
   }
 }
 
-import-module "mocks.sh";
-
 # Import all test files
-ls $(absolute-dir $0) |
+ls $(absolute-dir $BASH_SOURCE) |
   grep ".test.sh" |
-  while read file; do import-module $file; done;
+  while read file; do import-test-module $file; done;
 
 echo "All tests passed successfully!";

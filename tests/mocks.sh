@@ -1,6 +1,7 @@
 #!/bin/bash
 
 currentBranch="master";
+mockLastOpenedUrl="";
 
 git() {
   case "$1" in
@@ -19,9 +20,9 @@ git() {
         -v)
           echo "
             origin https://url.com/repo.git (fetch)
-            origin https://url.com/repo.git (hello)
+            origin https://url.com/repo.git (wow)
             upstream https://url.com/upstream-repo.git (fetch)
-            upstream https://url.com/upstream-repo.git (hello)
+            upstream https://url.com/upstream-repo.git (wow)
           ";
         ;;
         *)
@@ -33,4 +34,8 @@ git() {
       echo "Command not mocked yet";
     ;;
   esac
+}
+
+xdg-open() {
+  mockLastOpenedUrl="$1";
 }
