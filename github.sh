@@ -12,15 +12,29 @@ git-open-repo() {
 }
 
 git-open-pr() {
-  local remote=${1:-"origin"};
-  local targetBranch=${2:-"master"};
+  local remote=${2:-"origin"};
+  local targetBranch=${1:-"master"};
   local localBranch=$(git-get-branch-name);
   local url=$(git-get-remote-url $remote);
 
   if [ "$url" == "" ]; then
-    echo "No remote url found for $1";
+    echo "No remote url found for $remote";
   else
     url="$url/compare/$targetBranch...$localBranch";
     xdg-open "$url";
   fi;
 }
+
+git-new-issue() {
+  local remote=${2:-"origin"};
+  local url=$(git-get-remote-url $remote);
+  local title=${1:-"New issue"};
+
+  if [ "$url" == "" ]; then
+    echo "No remote url found for $remote";
+  else
+    url="$url/issues/new?title=$title";
+    xdg-open "$url";
+  fi;
+}
+
