@@ -13,7 +13,9 @@ assertEq() {
     let errors+=1;
     return 1;
   }
-} 
+}
+
+import-module "mocks.sh";
 
 # Import all test files
 ls $(absolute-dir $0) |

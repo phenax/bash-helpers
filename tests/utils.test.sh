@@ -4,5 +4,10 @@ echo "cool";
 
 import-module "../utils.sh";
 
-assertEq "1" "1";
-assertEq $(get-get-origin-url) "master";
+
+{ # Get branch name tests
+  assertEq "master" $(git-get-branch-name);
+
+  git checkout foobar > /dev/null;
+  assertEq "foobar" $(git-get-branch-name);
+}
