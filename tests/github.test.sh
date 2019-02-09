@@ -3,7 +3,7 @@
 import-module "github.sh";
 
 test "git-open"; {
-  
+
   # Should trigger xdg-open with given url
   git-open;
   assertEq "https://url.com/repo.git" "$mockLastOpenedUrl";

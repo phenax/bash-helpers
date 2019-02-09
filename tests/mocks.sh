@@ -3,6 +3,11 @@
 currentBranch="master";
 mockLastOpenedUrl="";
 
+reset-mocks() {
+  currentBranch="master";
+  mockLastOpenedUrl="";
+}
+
 git() {
   case "$1" in
     status)

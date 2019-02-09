@@ -12,6 +12,7 @@ import-test-module "../index.sh";
 
 
 test() {
+  reset-mocks;
   echo "-- $1";
 }
 
