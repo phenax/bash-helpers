@@ -3,5 +3,4 @@
 import-module "utils.sh";
 
 echo "$(git-get-branch-name)";
-echo "$(get-get-origin-url)";
-echo "$(get-get-origin-url)";
+echo "$(git-get-remote-url)";

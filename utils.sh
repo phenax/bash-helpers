@@ -10,8 +10,8 @@ git-get-branch-name() {
   )";
 }
 
-# Get origin url
-get-get-origin-url() {
+# Get remote url
+git-get-remote-url() {
   local remoteName=${1:-"origin"};
   echo "$(
     git remote -v |
@@ -24,6 +24,6 @@ get-get-origin-url() {
 # alias git-amend="git commit --amend";
 # alias git-sync="git pull origin develop";
 # alias git-unstage="git reset HEAD";
-# alias git-open="xdg-open $(get-get-origin-url)";
+# alias git-open="xdg-open $(git-get-remote-url)";
 
 
