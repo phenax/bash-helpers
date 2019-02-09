@@ -66,3 +66,9 @@ test "git-new-issue"; {
   assertEq "" "$mockLastOpenedUrl";
 }
 
+
+test "git-sync"; {
+  assertEq "origin.master" $(git-sync);
+  assertEq "origin.develop" $(git-sync develop);
+  assertEq "upstream.develop" $(git-sync develop upstream);
+}

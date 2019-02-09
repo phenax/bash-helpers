@@ -12,9 +12,10 @@ git-open-repo() {
 }
 
 git-open-pr() {
-  local remote=${2:-"origin"};
   local targetBranch=${1:-"master"};
   local localBranch=$(git-get-branch-name);
+
+  local remote=${2:-"origin"};
   local url=$(git-get-remote-url $remote);
 
   if [ "$url" == "" ]; then
@@ -26,9 +27,10 @@ git-open-pr() {
 }
 
 git-new-issue() {
+  local title=${1:-"New issue"};
+
   local remote=${2:-"origin"};
   local url=$(git-get-remote-url $remote);
-  local title=${1:-"New issue"};
 
   if [ "$url" == "" ]; then
     echo "No remote url found for $remote";
@@ -40,7 +42,7 @@ git-new-issue() {
 
 git-sync() {
   local targetBranch=${1:-"master"};
-  local remoteName=${1:-"origin"};
+  local remoteName=${2:-"origin"};
 
   git pull $remoteName $targetBranch;
 }
