@@ -4,4 +4,5 @@ echo "cool";
 
 import-module "../utils.sh";
 
-assertEq "wow" "master";
+assertEq "1" "1";
+assertEq $(get-get-origin-url) "master";
