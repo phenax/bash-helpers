@@ -1,6 +1,6 @@
 #!/bin/bash
 
-import-module "github.sh";
+import-module "git.sh";
 
 test "git-open-repo"; {
 

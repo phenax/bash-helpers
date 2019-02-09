@@ -26,6 +26,5 @@ git-get-remote-url() {
 # alias git-amend="git commit --amend";
 # alias git-sync="git pull origin develop";
 # alias git-unstage="git reset HEAD";
-# alias git-open="xdg-open $(git-get-remote-url)";
 
 

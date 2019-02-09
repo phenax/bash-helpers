@@ -38,3 +38,10 @@ git-new-issue() {
   fi;
 }
 
+git-sync() {
+  local targetBranch=${1:-"master"};
+  local remoteName=${1:-"origin"};
+
+  git pull $remoteName $targetBranch;
+}
+

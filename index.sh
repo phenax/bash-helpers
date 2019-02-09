@@ -19,4 +19,4 @@ sourcePath="$(get-source-path "$@")";
 import-module() { source "$(dirname $sourcePath)/$1"; }
 
 import-module "utils.sh";
-import-module "github.sh";
+import-module "git.sh";
