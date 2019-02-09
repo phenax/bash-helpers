@@ -1,15 +1,10 @@
 #!/bin/bash
 set -e;
 
-# Returns absolute directory of a file/dir path
-absolute-dir() { echo $(dirname "$(realpath $1)"); }
+testSourcePath=$(dirname "${BASH_SOURCE:-$0}");
 
-# Import module with an absolute path
-import-test-module() { source "$(absolute-dir $BASH_SOURCE)/$1"; }
-
-import-test-module "mocks.sh";
-import-test-module "../index.sh";
-
+source "$testSourcePath/../index.sh";
+source "$testSourcePath/mocks.sh";
 
 test() {
   reset-mocks;
@@ -25,8 +20,8 @@ assertEq() {
 }
 
 # Import all test files
-ls $(absolute-dir $BASH_SOURCE) |
+ls $testSourcePath |
   grep ".test.sh" |
-  while read file; do import-test-module $file; done;
+  while read file; do source "$testSourcePath/$file"; done;
 
 echo "All tests passed successfully!";

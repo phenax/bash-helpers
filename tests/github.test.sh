@@ -14,7 +14,7 @@ test "git-open-repo"; {
 
   mockLastOpenedUrl="";
   # Should return exit code 1, if repo was not found
-  local res=$(git-open-repo hello);
+  res=$(git-open-repo hello);
   assertEq "No remote url found for hello" "$res";
   assertEq "" "$mockLastOpenedUrl";
 }
@@ -36,7 +36,7 @@ test "git-open-pr"; {
 
   mockLastOpenedUrl="";
   # Should return exit code 1, if repo was not found
-  local res=$(git-open-pr hello);
+  res=$(git-open-pr hello);
   assertEq "No remote url found for hello" "$res";
   assertEq "" "$mockLastOpenedUrl";
 }
