@@ -23,8 +23,6 @@ git-get-remote-url() {
   echo "${url/.git/}"; # Remove .git extension
 }
 
-# alias git-amend="git commit --amend";
-# alias git-sync="git pull origin develop";
 # alias git-unstage="git reset HEAD";
 
 

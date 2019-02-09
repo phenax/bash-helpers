@@ -44,6 +44,14 @@ git-sync() {
   local targetBranch=${1:-"master"};
   local remoteName=${2:-"origin"};
 
-  git pull $remoteName $targetBranch;
+  git pull $remoteName $targetBranch "${@:2:100}";
+}
+
+git-amend() {
+  flag="--no-edit";
+  if [[ "$1" != "" ]]; then
+    flag="-m=$1";
+  fi;
+  git commit --amend $flag "${@:1:100}";
 }
 

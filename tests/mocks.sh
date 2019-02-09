@@ -35,8 +35,11 @@ git() {
         ;;
       esac
     ;;
+    commit)
+      echo "$1.$2.$3.$4";
+    ;;
     pull)
-      echo "$2.$3";
+      echo "$1.$2.$3";
     ;;
     *)
       echo "Command not mocked yet";

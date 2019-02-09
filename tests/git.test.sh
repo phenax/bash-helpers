@@ -68,7 +68,12 @@ test "git-new-issue"; {
 
 
 test "git-sync"; {
-  assertEq "origin.master" $(git-sync);
-  assertEq "origin.develop" $(git-sync develop);
-  assertEq "upstream.develop" $(git-sync develop upstream);
+  assertEq "pull.origin.master" $(git-sync);
+  assertEq "pull.origin.develop" $(git-sync develop);
+  assertEq "pull.upstream.develop" $(git-sync develop upstream);
+}
+
+test "git-amend"; {
+  assertEq "commit.--amend.--no-edit." $(git-amend);
+  assertEq "commit.--amend.-m=My.message" $(git-amend "My message");
 }
