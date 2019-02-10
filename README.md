@@ -24,15 +24,18 @@ git clone https://github.com/phenax/bash-helpers.git ~/.bash-helpers
 export PATH=$HOME/bash-alias/bin:$PATH;
 ```
 
-* The previous step was the final step. This is just a congratulations step.
+* Either open a new terminal tab/window or run this in your current terminal.
+```bash
+source ~/.bashrc
+```
+
+* The previous step was the final step. This is just a "Congratulations! You've done it" step.
 
 
 
 ## Commands available
 
-### Git Repository stuff
-
-#### Open your repository in the browser
+### Open your repository in the browser
 
 For origin
 ```bash
@@ -44,7 +47,7 @@ For upstream repo
 git open-repo upstream
 ```
 
-#### Create a new pull request
+### Create a new pull request
 
 Current branch to origin/master
 ```bash
@@ -61,7 +64,7 @@ Current branch to upstream/develop
 git open-pr develop upstream
 ```
 
-#### Create a new issue
+### Create a new issue
 
 Go to create issue page
 ```bash
@@ -78,10 +81,7 @@ Issue with title to be created on upstream repo
 git new-issue "Cant click on stuff" upstream
 ```
 
-
-### Git shorthands
-
-#### Amend
+### Git Amend
 
 ```bash
 git amend
@@ -92,7 +92,7 @@ Edit message
 git amend "My message"
 ```
 
-#### Sync
+### Sync
 How dare they make me type "origin"?!
 
 With master branch
