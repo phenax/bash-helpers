@@ -19,7 +19,7 @@ git-open-pr() {
   local url=$(git-get-remote-url $remote);
 
   if [ "$url" == "" ]; then
-    echo "No remote url found for $remote";
+    echo "No remote url found for $remote"; # TODO: Add case for using pr id's
   else
     url="$url/compare/$targetBranch...$localBranch";
     xdg-open "$url";
@@ -55,3 +55,9 @@ git-amend() {
   git commit --amend $flag "${@:1:100}";
 }
 
+git-gh-pages() {
+  local directory=${1:-"build"};
+  local remoteName=${2:-"origin"};
+
+  git subtree push --prefix $directory $remoteName gh-pages;
+}

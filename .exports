@@ -3,3 +3,4 @@ git-open-repo
 git-new-issue
 git-sync
 git-amend
+git-gh-pages

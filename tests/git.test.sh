@@ -77,3 +77,9 @@ test "git-amend"; {
   assertEq "commit.--amend.--no-edit." $(git-amend);
   assertEq "commit.--amend.-m=My.message" $(git-amend "My message");
 }
+
+test "git-gh-pages"; {
+  assertEq "subtree.push.--prefix.build.origin.gh-pages" $(git-gh-pages);
+  assertEq "subtree.push.--prefix.dist.origin.gh-pages" $(git-gh-pages dist);
+}
+

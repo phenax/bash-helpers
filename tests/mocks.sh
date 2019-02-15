@@ -41,6 +41,9 @@ git() {
     pull)
       echo "$1.$2.$3";
     ;;
+    subtree)
+      echo "$1.$2.$3.$4.$5.$6";
+    ;;
     *)
       echo "Command not mocked yet";
     ;;
